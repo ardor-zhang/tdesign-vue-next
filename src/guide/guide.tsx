@@ -56,6 +56,8 @@ export default defineComponent({
     const currentStepInfo = computed(() => steps.value[innerCurrent.value]);
     // 当前是否为 popup
     const isPopup = computed(() => getCurrentCrossProps('mode') === 'popup');
+    // 当前是否展示 highlightContent
+    const showHighlightContent = computed(() => currentStepInfo.value?.highlightContent && isPopup.value);
     // 当前元素位置状态
     const currentElmIsFixed = computed(() => isFixed(currentHighlightLayerElm.value || document.body));
     // 获取当前步骤的所有属性 用户当前步骤设置 > 用户全局设置的 > 默认值
@@ -212,17 +214,16 @@ export default defineComponent({
         ];
         const showOverlay = getCurrentCrossProps('showOverlay');
         const maskClass = [`${COMPONENT_NAME.value}__highlight--${showOverlay ? 'mask' : 'nomask'}`];
-        const { highlightContent } = currentStepInfo.value;
-        const showHighlightContent = highlightContent && isPopup.value;
+        const highlightContent = showHighlightContent.value ? currentStepInfo.value.highlightContent : '';
 
         return (
           <div
             ref={highlightLayerRef}
             v-transfer-dom="body"
-            class={highlightClass.concat(showHighlightContent ? highlightClass : maskClass)}
+            class={highlightClass.concat(showHighlightContent.value ? [] : maskClass)}
             style={style}
           >
-            {showHighlightContent && <highlightContent class={highlightClass.concat(maskClass)} style={style} />}
+            {highlightContent && <highlightContent class={maskClass} />}
           </div>
         );
       };
