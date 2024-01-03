@@ -8,6 +8,7 @@ export * from './grid';
 export * from './layout';
 export * from './divider';
 export * from './space';
+export * from './split';
 
 // 导航
 export * from './affix';
