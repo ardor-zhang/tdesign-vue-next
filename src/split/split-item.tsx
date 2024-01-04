@@ -4,8 +4,10 @@ import { useContent } from '../hooks/tnode';
 import { usePrefixClass } from '../hooks/useConfig';
 import setStyle from '../_common/js/utils/set-style';
 import { Styles } from '../common';
-import { TSplitInjectKey, TSplitInject } from './interface';
+import { TSplitInjectKey } from './interface';
 import { TdSplitItemProps } from './type';
+import isNaN from 'lodash/isNaN';
+
 /**
  * @实现思路
  * 1. 在其左侧或上侧要附加一个可拖拽的 bar（可传入 isFirst 来判断是否展示）
@@ -29,7 +31,7 @@ export default defineComponent({
 
     onMounted(() => {
       const { span, min, max } = props;
-      splitInject.addItem({ updateStyle, span: span, max, min });
+      splitInject.addItem({ updateStyle, span: !span || isNaN(span) ? Infinity : span, max, min });
     });
 
     return () => {

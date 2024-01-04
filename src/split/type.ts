@@ -7,7 +7,7 @@
 export interface TdSplitProps {}
 
 export interface TdSplitItemProps {
-  span?: string | number;
-  max?: string | number;
-  min?: string | number;
+  span?: number;
+  max?: number;
+  min?: number;
 }

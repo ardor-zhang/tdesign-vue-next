@@ -1,19 +1,15 @@
 import type { InjectionKey } from 'vue';
 import { Styles } from '../common';
 
-export interface AddItemArg {
+export interface Item {
   updateStyle: (style: Styles) => void;
-  span: number | string;
-  min: number | string;
-  max: number | string;
-}
-
-interface AddItem {
-  (arg: AddItemArg): void;
+  span: number;
+  min: number;
+  max: number;
 }
 
 export interface TSplitInject {
-  addItem: AddItem;
+  addItem: (item: Item) => void;
 }
 
 export const TSplitInjectKey: InjectionKey<TSplitInject> = Symbol('TSplitInject');
