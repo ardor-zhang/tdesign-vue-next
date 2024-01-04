@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <t-split>
-      <t-split-item :span="120">1</t-split-item>
+      <t-split-item>1</t-split-item>
       <t-split-item>2</t-split-item>
       <t-split-item>3</t-split-item>
     </t-split>

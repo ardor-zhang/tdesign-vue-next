@@ -1,4 +1,4 @@
-import { defineComponent, computed, provide, VNode, Slots, ref, onMounted } from 'vue';
+import { defineComponent, computed, provide, VNode, Slots, ref, onMounted, reactive } from 'vue';
 
 import { useChildComponentSlots } from '../hooks/slot';
 import { usePrefixClass, useCommonClassName } from '../hooks/useConfig';
@@ -7,7 +7,7 @@ import { Styles } from '../common';
 import isNaN from 'lodash/isNaN';
 
 import props from './props';
-import { TSplitInjectKey, Item } from './interface';
+import { TSplitInjectKey, Item, SplitVNode, SplitItemIndex } from './interface';
 
 export default defineComponent({
   name: 'TSplit',
@@ -15,10 +15,12 @@ export default defineComponent({
   setup(props) {
     const COMPONENT_NAME = usePrefixClass('split');
     const getChildByName = useChildComponentSlots();
+
+    const splitContainer = ref<HTMLElement>();
     const items = ref<Item[]>([]);
 
     const addItem = (item: Item) => {
-      items.value.push(item);
+      items.value[item.index] = item;
     };
 
     const calculateItemsSpan = () => {
@@ -47,13 +49,59 @@ export default defineComponent({
       items.value.forEach((item) => item.updateStyle({ width: `${item.span}%` }));
     };
 
+    const sumPrevItemsSpan = (index: number) => {
+      return items.value.reduce((sum, item, i) => sum + (i < index - 1 ? item.span : 0), 0);
+    };
+
+    const sumNextItemsSpan = (index: number) => {
+      return items.value.reduce((sum, item, i) => sum + (i > index ? item.span : 0), 0);
+    };
+
+    const reCalculateItemsSpan = (e: MouseEvent, index: number) => {
+      const rect = splitContainer.value.getBoundingClientRect();
+      const { clientX, clientY } = e;
+      const x = clientX - rect.left;
+      const p = (x * 100) / splitContainer.value.clientWidth;
+
+      const prev = items.value[index - 1];
+      prev.span = p - sumPrevItemsSpan(index);
+      const next = items.value[index];
+      next.span = 100 - p - sumNextItemsSpan(index);
+    };
+
+    const dragInfo = reactive({
+      status: false,
+    });
+
+    const draggerMousedown = (e: MouseEvent, index: number) => {
+      dragInfo.status = true;
+    };
+
+    const draggerMousemove = (e: MouseEvent, index: number) => {
+      if (dragInfo.status) {
+        reCalculateItemsSpan(e, index);
+        updateItemStyle();
+      }
+    };
+
     onMounted(() => {
       calculateItemsSpan();
       updateItemStyle();
     });
 
-    provide(TSplitInjectKey, { addItem });
+    provide(TSplitInjectKey, { addItem, draggerMousedown, draggerMousemove });
 
-    return () => <div class={COMPONENT_NAME.value}>{getChildByName('TSplitItem')}</div>;
+    const renderChildren = () => {
+      const children = getChildByName('TSplitItem') as SplitVNode[];
+      // 给 children 添加 index
+      children.forEach((child, index) => (child[SplitItemIndex] = index));
+      return children;
+    };
+
+    return () => (
+      <div class={COMPONENT_NAME.value} ref={splitContainer}>
+        {renderChildren()}
+      </div>
+    );
   },
 });

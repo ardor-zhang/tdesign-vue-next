@@ -1,12 +1,12 @@
-import { defineComponent, inject, onMounted, ref } from 'vue';
+import { defineComponent, getCurrentInstance, inject, onMounted, ref } from 'vue';
 import props from './split-item-props';
 import { useContent } from '../hooks/tnode';
 import { usePrefixClass } from '../hooks/useConfig';
 import setStyle from '../_common/js/utils/set-style';
 import { Styles } from '../common';
-import { TSplitInjectKey } from './interface';
 import { TdSplitItemProps } from './type';
 import isNaN from 'lodash/isNaN';
+import { TSplitInjectKey, Item, SplitVNode, SplitItemIndex } from './interface';
 
 /**
  * @实现思路
@@ -22,6 +22,7 @@ export default defineComponent({
     const COMPONENT_NAME = usePrefixClass('split');
     const renderContent = useContent();
     const itemRef = ref<HTMLElement>();
+    const { vnode } = getCurrentInstance();
 
     const splitInject = inject(TSplitInjectKey);
 
@@ -29,15 +30,29 @@ export default defineComponent({
       setStyle(itemRef.value, style);
     };
 
+    const handleMousedown = (e: MouseEvent) => splitInject.draggerMousedown(e, vnode[SplitItemIndex]);
+
+    const handleMousemove = (e: MouseEvent) => splitInject.draggerMousemove(e, vnode[SplitItemIndex]);
+
     onMounted(() => {
       const { span, min, max } = props;
-      splitInject.addItem({ updateStyle, span: !span || isNaN(span) ? Infinity : span, max, min });
+      splitInject.addItem({
+        updateStyle,
+        span: !span || isNaN(span) ? Infinity : span,
+        max,
+        min,
+        index: vnode[SplitItemIndex],
+      });
     });
 
     return () => {
       return (
         <>
-          <div class={`${COMPONENT_NAME.value}__dragger`}></div>
+          <div
+            class={`${COMPONENT_NAME.value}__dragger`}
+            onMousedown={handleMousedown}
+            onMousemove={handleMousemove}
+          ></div>
           <div class={`${COMPONENT_NAME.value}__item`} ref={itemRef}>
             {renderContent('content', 'default')}
           </div>
