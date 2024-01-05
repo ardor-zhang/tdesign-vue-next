@@ -61,48 +61,49 @@ export default defineComponent({
         const slots = getChildByName('TDescriptionsItem');
         if (slots.length !== 0) {
           // 2.2 b 方式 获取 TDescriptionsItem
-          items = slots.map((item) => {
-            const { span = 1 } = item.props || {};
-            return {
-              label: renderVNodeTNode(item, 'label'),
-              content: renderVNodeTNode(item, 'content', 'default'),
-              span,
-            };
-          });
+          // items = slots.map((item) => {
+          //   const { span = 1 } = item.props || {};
+          //   return {
+          //     label: renderVNodeTNode(item, 'label'),
+          //     content: renderVNodeTNode(item, 'content', 'default'),
+          //     span,
+          //   };
+          // });
         }
       }
+      return [items];
 
-      // 2. 判断布局，如果整体布局为 LayoutEnum.VERTICAL，那么直接返回即可。
-      if (layout === LayoutEnum.VERTICAL) {
-        return [items];
-      }
+      // // 2. 判断布局，如果整体布局为 LayoutEnum.VERTICAL，那么直接返回即可。
+      // if (layout === LayoutEnum.VERTICAL) {
+      //   return [items];
+      // }
 
-      // 3. 布局为 LayoutEnum.HORIZONTAL 时，需要计算每一行的 item 个数
-      let temp: TdDescriptionItemProps[] = [];
-      let reset = column;
+      // // 3. 布局为 LayoutEnum.HORIZONTAL 时，需要计算每一行的 item 个数
+      // let temp: TdDescriptionItemProps[] = [];
+      // let reset = column;
 
-      // 4. 记录结果
-      const res: TdDescriptionItemProps[][] = [];
-      items.forEach((item, index) => {
-        const { span } = item;
-        if (reset >= span) {
-          // 当前行还剩余空间
-          temp.push(item);
-          reset -= span;
-        } else {
-          // 当前行放不下了，放下一行
-          res.push(temp);
-          temp = [item];
-          reset = column - span;
-        }
+      // // 4. 记录结果
+      // const res: TdDescriptionItemProps[][] = [];
+      // items.forEach((item, index) => {
+      //   const { span } = item;
+      //   if (reset >= span) {
+      //     // 当前行还剩余空间
+      //     temp.push(item);
+      //     reset -= span;
+      //   } else {
+      //     // 当前行放不下了，放下一行
+      //     res.push(temp);
+      //     temp = [item];
+      //     reset = column - span;
+      //   }
 
-        if (index === items.length - 1) {
-          // 最后一个
-          item.span += reset;
-          res.push(temp);
-        }
-      });
-      return res;
+      //   if (index === items.length - 1) {
+      //     // 最后一个
+      //     item.span += reset;
+      //     res.push(temp);
+      //   }
+      // });
+      // return res;
     });
 
     provide(descriptionsKey, props);
@@ -115,11 +116,7 @@ export default defineComponent({
       ];
       return (
         <table class={tableClass}>
-          <tbody>
-            {rows.value.map((row) => (
-              <DescriptionsRow row={row} />
-            ))}
-          </tbody>
+          <tbody>{rows.value.map((row) => row)}</tbody>
         </table>
       );
     };
