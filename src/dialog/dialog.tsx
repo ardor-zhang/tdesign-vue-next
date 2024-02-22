@@ -28,6 +28,7 @@ const getClickPosition = (e: MouseEvent) => {
   mousePosition = {
     x: e.clientX,
     y: e.clientY,
+    sads,
   };
   setTimeout(() => {
     mousePosition = null;
