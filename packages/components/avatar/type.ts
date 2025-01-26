@@ -6,7 +6,8 @@
 
 import { ImageProps } from '../image';
 import { PopupProps } from '../popup';
-import { TNode, ShapeEnum } from '../common';
+import { TNode } from '../common';
+import { ShapeEnum } from 'packages/types/common';
 
 export interface TdAvatarProps {
   /**

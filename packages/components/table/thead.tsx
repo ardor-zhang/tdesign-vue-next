@@ -7,7 +7,7 @@ import { renderTitle } from './hooks/useTableHeader';
 import TEllipsis from './ellipsis';
 import { formatClassNames } from './utils';
 import { RowAndColFixedPosition, BaseTableColumns, ThRowspanAndColspan } from './interface';
-import { AttachNode } from '../common';
+import { AttachNode } from 'packages/types/common';
 
 export interface TheadProps {
   classPrefix: string;

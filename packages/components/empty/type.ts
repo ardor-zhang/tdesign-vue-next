@@ -5,7 +5,8 @@
  * */
 
 import { ImageProps } from '../image';
-import { TNode, SizeEnum, Styles } from '../common';
+import { TNode } from '../common';
+import { SizeEnum, Styles } from 'packages/types/common';
 
 export interface TdEmptyProps {
   /**

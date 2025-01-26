@@ -8,7 +8,8 @@ import { CheckboxProps } from '../checkbox';
 import { PaginationProps, PageInfo } from '../pagination';
 import { InputProps } from '../input';
 import { TreeProps } from '../tree';
-import { TNode, KeysType } from '../common';
+import { TNode } from '../common';
+import { KeysType } from 'packages/types/common';
 
 export interface TdTransferProps<T extends DataOption = DataOption> {
   /**

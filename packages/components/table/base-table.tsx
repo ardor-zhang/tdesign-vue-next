@@ -20,7 +20,7 @@ import { ROW_LISTENERS } from './tr';
 import THead from './thead';
 import TFoot from './tfoot';
 import { getAffixProps } from './utils';
-import { Styles, ComponentScrollToElementParams } from '../common';
+import { Styles, ComponentScrollToElementParams } from 'packages/types/common';
 import { getIEVersion } from '../../common/js/utils/helper';
 import { BaseTableInstanceFunctions } from './type';
 import log from '../../common/js/log';

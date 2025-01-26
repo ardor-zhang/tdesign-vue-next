@@ -39,7 +39,7 @@ import {
   MessageCloseMethod,
   MessageCloseAllMethod,
 } from './type';
-import { AttachNodeReturnValue } from '../common';
+import { AttachNodeReturnValue } from 'packages/types/common';
 import { isObject } from 'lodash-es';
 import { isString } from 'lodash-es';
 

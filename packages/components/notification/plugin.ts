@@ -12,7 +12,7 @@ import {
   NotificationCloseMethod,
   NotificationCloseAllMethod,
 } from './type';
-import { AttachNodeReturnValue } from '../common';
+import { AttachNodeReturnValue } from 'packages/types/common';
 import './style';
 
 let seed = 0;

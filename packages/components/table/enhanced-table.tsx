@@ -14,7 +14,7 @@ import {
 import useTreeData from './hooks/useTreeData';
 import useTreeSelect from './hooks/useTreeSelect';
 import { get } from 'lodash-es';
-import { ComponentScrollToElementParams } from '../common';
+import { ComponentScrollToElementParams } from 'packages/types/common';
 import log from '../../common/js/log';
 import { usePrefixClass } from '../hooks';
 

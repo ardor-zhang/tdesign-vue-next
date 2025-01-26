@@ -9,7 +9,7 @@ import { isString } from 'lodash-es';
 import { isFunction } from 'lodash-es';
 import { isArray } from 'lodash-es';
 import { easeInOutCubic, EasingFunction } from '../../utils/easing';
-import { ScrollContainer, ScrollContainerElement } from '../common';
+import { ScrollContainer, ScrollContainerElement } from 'packages/types/common';
 
 export const isServer = typeof window === 'undefined';
 const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');

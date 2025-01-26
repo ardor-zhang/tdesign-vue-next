@@ -7,7 +7,8 @@
 import { InputProps } from '../input';
 import { PopupProps } from '../popup';
 import { TextareaProps } from '../textarea';
-import { TNode, SizeEnum } from '../common';
+import { TNode } from '../common';
+import { SizeEnum } from 'packages/types/common';
 
 export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoCompleteOption> {
   /**

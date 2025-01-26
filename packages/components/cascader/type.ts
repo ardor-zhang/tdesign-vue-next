@@ -12,7 +12,8 @@ import { TagInputProps } from '../tag-input';
 import { TagProps } from '../tag';
 import { TreeNodeModel } from '../tree';
 import { PopupVisibleChangeContext } from '../popup';
-import { TNode, TreeOptionData, SizeEnum, TreeKeysType } from '../common';
+import { TNode, TreeOptionData } from '../common';
+import { SizeEnum, TreeKeysType } from 'packages/types/common';
 
 export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOptionData> {
   /**

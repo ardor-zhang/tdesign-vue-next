@@ -1,7 +1,7 @@
 import { Ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import useVirtualScroll from '../../hooks/useVirtualScroll';
 import { TdSelectProps } from '../type';
-import { Styles } from '../../common';
+import { Styles } from 'packages/types/common';
 
 export const usePanelVirtualScroll = (props: {
   scroll: TdSelectProps['scroll'];

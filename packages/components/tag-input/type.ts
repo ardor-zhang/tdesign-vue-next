@@ -6,7 +6,8 @@
 
 import { InputProps } from '../input';
 import { TagProps } from '../tag';
-import { TNode, SizeEnum } from '../common';
+import { TNode } from '../common';
+import { SizeEnum } from 'packages/types/common';
 
 export interface TdTagInputProps {
   /**

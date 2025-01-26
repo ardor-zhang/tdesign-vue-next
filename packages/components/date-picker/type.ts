@@ -10,7 +10,8 @@ import { SelectInputProps } from '../select-input';
 import { TimePickerProps } from '../time-picker';
 import { Dayjs } from 'dayjs';
 import { RangeInputProps } from '../range-input';
-import { TNode, SizeEnum } from '../common';
+import { TNode } from '../common';
+import { SizeEnum } from 'packages/types/common';
 
 export interface TdDatePickerProps {
   /**

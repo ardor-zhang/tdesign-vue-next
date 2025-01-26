@@ -3,7 +3,7 @@ import { get } from 'lodash-es';
 import { TypeTreeState, TypeTimer } from '../tree-types';
 import log from '../../../common/js/log';
 
-import type { ComponentScrollToElementParams } from '../../common';
+import type { ComponentScrollToElementParams } from 'packages/types/common';
 
 // tree 虚拟滚动整合
 export default function useTreeScroll(state: TypeTreeState) {

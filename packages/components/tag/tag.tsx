@@ -7,7 +7,7 @@ import props from './props';
 import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import { useTNodeJSX, useContent } from '../hooks/tnode';
-import { Styles } from '../common';
+import { Styles } from 'packages/types/common';
 
 export default defineComponent({
   name: 'TTag',

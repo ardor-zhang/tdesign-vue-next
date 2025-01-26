@@ -11,7 +11,8 @@ import { TagProps } from '../tag';
 import { TreeProps, TreeNodeModel } from '../tree';
 import { SelectInputValueChangeContext } from '../select-input';
 import { PopupVisibleChangeContext } from '../popup';
-import { TNode, TreeOptionData, TreeKeysType } from '../common';
+import { TNode, TreeOptionData } from '../common';
+import type { TreeKeysType } from 'packages/types/common';
 
 export interface TdTreeSelectProps<
   DataOption extends TreeOptionData = TreeOptionData,

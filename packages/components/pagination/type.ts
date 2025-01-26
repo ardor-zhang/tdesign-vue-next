@@ -5,7 +5,8 @@
  * */
 
 import { SelectProps } from '../select';
-import { TNode, SizeEnum } from '../common';
+import { TNode } from '../common';
+import { SizeEnum } from 'packages/types/common';
 
 export interface TdPaginationProps {
   /**

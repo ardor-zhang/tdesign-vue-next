@@ -3,7 +3,7 @@ import _BaseTable from './base-table';
 import _PrimaryTable from './primary-table';
 import _EnhancedTable from './enhanced-table';
 import withInstall from '../utils/withInstall';
-import { InfinityScroll } from '../common';
+import { InfinityScroll } from 'packages/types/common';
 import { BaseTableInstanceFunctions, EnhancedTableInstanceFunctions, PrimaryTableInstanceFunctions } from './type';
 
 import './style';

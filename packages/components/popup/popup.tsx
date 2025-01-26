@@ -25,6 +25,7 @@ import setStyle from '../../common/js/utils/set-style';
 import Container from './container';
 import props from './props';
 import { PopupTriggerEvent, TdPopupProps } from './type';
+import { Styles } from 'packages/types/common';
 
 const POPUP_ATTR_NAME = 'data-td-popup';
 const POPUP_PARENT_ATTR_NAME = 'data-td-popup-parent';
@@ -250,7 +251,7 @@ export default defineComponent({
       if (isFunction(overlayInnerStyle)) {
         setStyle(overlayEl.value, overlayInnerStyle(triggerEl.value, overlayEl.value));
       } else if (isObject(overlayInnerStyle)) {
-        setStyle(overlayEl.value, overlayInnerStyle);
+        setStyle(overlayEl.value, overlayInnerStyle as Styles);
       }
     }
 

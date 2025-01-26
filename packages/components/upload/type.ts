@@ -7,7 +7,8 @@
 import { ImageViewerProps } from '../image-viewer';
 import { UploadConfig } from '../config-provider/type';
 import { ButtonProps } from '../button';
-import { PlainObject, TNode, UploadDisplayDragEvents } from '../common';
+import { TNode, UploadDisplayDragEvents } from '../common';
+import type { PlainObject } from 'packages/types/common';
 
 export interface TdUploadProps<T extends UploadFile = UploadFile> {
   /**

@@ -14,7 +14,7 @@ import { get } from 'lodash-es';
 import { debounce } from 'lodash-es';
 import { xorWith } from 'lodash-es';
 import log from '../../../common/js/log';
-import { ClassName, Styles } from '../../common';
+import { ClassName, Styles } from 'packages/types/common';
 import { BaseTableCol, BaseTableInstanceFunctions, TableRowData, TdBaseTableProps } from '../type';
 import { getScrollbarWidthWithCSS } from '../../../common/js/utils/getScrollbarWidth';
 import { on, off } from '../../utils/dom';

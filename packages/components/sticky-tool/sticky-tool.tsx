@@ -9,7 +9,7 @@ import { useChildComponentSlots } from '../hooks';
 import stickyItemProps from './sticky-item-props';
 
 import type { TdStickyItemProps } from './type';
-import type { Styles } from '../common';
+import type { Styles } from 'packages/types/common';
 
 export default defineComponent({
   name: 'TStickyTool',

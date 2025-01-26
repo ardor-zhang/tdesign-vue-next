@@ -6,7 +6,8 @@
 
 import { ButtonProps } from '../button';
 import { PopupProps } from '../popup';
-import { TNode, AttachNode } from '../common';
+import { TNode } from '../common';
+import { AttachNode } from 'packages/types/common';
 
 export interface TdGuideProps {
   /**

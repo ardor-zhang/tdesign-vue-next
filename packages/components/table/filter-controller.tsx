@@ -10,7 +10,7 @@ import { useTNodeDefault } from '../hooks/tnode';
 import { PrimaryTableCol, FilterValue, TdPrimaryTableProps } from './type';
 import { useConfig } from '../hooks/useConfig';
 import { useGlobalIcon } from '../hooks/useGlobalIcon';
-import { AttachNode } from '../common';
+import { AttachNode } from 'packages/types/common';
 import { isFunction } from 'lodash-es';
 import { TableConfig } from '../config-provider';
 

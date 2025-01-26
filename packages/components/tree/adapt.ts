@@ -3,7 +3,9 @@
 import * as Vue from 'vue';
 import { Ref, SetupContext, ToRefs, VNode, PropType, ComponentPublicInstance, UnwrapNestedRefs } from 'vue';
 import { CheckboxProps } from '../checkbox';
-import { ClassName, TScroll, Styles, TNode, TreeOptionData, TNodeReturnValue } from '../common';
+
+import { TNode, TreeOptionData, TNodeReturnValue } from '../common';
+import { ClassName, TScroll, Styles } from 'packages/types/common';
 import { TypeTreeEventState as TreeEventState } from '../../common/js/tree/types';
 import { TdTreeProps, TreeInstanceFunctions } from './type';
 import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';

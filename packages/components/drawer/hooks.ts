@@ -1,5 +1,5 @@
 import { computed, ref } from 'vue';
-import { Styles } from '../common';
+import { Styles } from 'packages/types/common';
 import { getSizeDraggable, calcMoveSize } from '../../common/js/drawer/utils';
 import type { TdDrawerProps } from './type';
 

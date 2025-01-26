@@ -7,7 +7,7 @@ import useCommonClassName from '../hooks/useCommonClassName';
 import AutoCompleteOptionList from './option-list';
 import useVModel from '../hooks/useVModel';
 import { useConfig } from '../config-provider/useConfig';
-import { ClassName } from '../common';
+import { ClassName } from 'packages/types/common';
 import { useContent, useTNodeJSX } from '../hooks';
 import { useDisabled } from '../hooks/useDisabled';
 import { useReadonly } from '../hooks/useReadonly';

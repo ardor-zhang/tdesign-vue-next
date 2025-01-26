@@ -4,7 +4,7 @@ import { isUndefined } from 'lodash-es';
 
 import { on, off, getScrollContainer } from '../utils/dom';
 import props from './props';
-import { ScrollContainerElement } from '../common';
+import type { ScrollContainerElement } from 'packages/types/common';
 import { usePrefixClass } from '../hooks/useConfig';
 import { useTNodeJSX } from '../hooks/tnode';
 

@@ -5,8 +5,9 @@
  * updated at 2021-12-12 19:17:30
  * */
 
+import { ScrollContainer } from 'packages/types/common';
 import { AffixProps } from '../affix';
-import { TNode, ScrollContainer } from '../common';
+import { TNode } from '../common';
 
 export interface TdAnchorProps {
   /**

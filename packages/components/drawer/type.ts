@@ -5,7 +5,8 @@
  * */
 
 import { ButtonProps } from '../button';
-import { TNode, Styles, AttachNode } from '../common';
+import { TNode } from '../common';
+import { Styles, AttachNode } from 'packages/types/common';
 
 export interface TdDrawerProps {
   /**

@@ -5,7 +5,7 @@ import { omit } from 'lodash-es';
 import { useTNodeJSX } from '../hooks/tnode';
 import TButton, { ButtonProps } from '../button';
 import { PopconfirmConfig, DialogConfig, DrawerConfig } from '../config-provider';
-import type { ClassName } from '../common';
+import type { ClassName } from 'packages/types/common';
 import type { TdDialogProps } from './type';
 
 export interface MixinsConfirmBtn {

@@ -1,6 +1,6 @@
 import { computed, defineComponent, inject, Slots, ref } from 'vue';
 import { omit } from 'lodash-es';
-import { Styles } from '../common';
+import { Styles } from 'packages/types/common';
 
 import { SelectOption, SelectOptionGroup, TdOptionProps } from './type';
 import Option from './option';

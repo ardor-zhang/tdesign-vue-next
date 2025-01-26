@@ -5,7 +5,7 @@ import { isFunction } from 'lodash-es';
 
 import { useChildComponentSlots } from '../../hooks/slot';
 import { TdSelectProps, TdOptionProps, SelectOptionGroup, SelectValue, SelectOption } from '../type';
-import { KeysType } from '../../common';
+import { KeysType } from 'packages/types/common';
 
 type UniOption = (TdOptionProps | SelectOptionGroup) & {
   index?: number;

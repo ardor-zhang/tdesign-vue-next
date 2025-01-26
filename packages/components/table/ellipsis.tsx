@@ -1,7 +1,8 @@
 /** 超出省略显示 */
 import { defineComponent, PropType, ref, computed, onMounted, onUpdated } from 'vue';
 import { debounce } from 'lodash-es';
-import { AttachNode, TNode } from '../common';
+import { TNode } from '../common';
+import { AttachNode } from 'packages/types/common';
 import { renderContent } from '../utils/render-tnode';
 import { isTextEllipsis } from '../utils/dom';
 import TTooltip, { TooltipProps } from '../tooltip';

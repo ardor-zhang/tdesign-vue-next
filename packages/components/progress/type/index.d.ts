@@ -1,5 +1,5 @@
 import { VNode } from 'vue';
-import { ClassName } from '../../common';
+import { ClassName } from 'packages/types/common';
 
 export interface ProgressProps {
   theme?: string;

@@ -19,8 +19,8 @@ import { ButtonProps } from '../button';
 import { CheckboxGroupProps } from '../checkbox';
 import { DialogProps } from '../dialog';
 import { FormRule, AllValidateResult } from '../form';
-import {
-  TNode,
+import type { TNode } from '../common';
+import type {
   OptionData,
   SizeEnum,
   ClassName,
@@ -30,7 +30,7 @@ import {
   ComponentType,
   TScroll,
   ComponentScrollToElementParams,
-} from '../common';
+} from '../../types/common';
 
 export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   /**

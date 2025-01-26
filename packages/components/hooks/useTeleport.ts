@@ -1,6 +1,6 @@
 import { getSSRAttach, getAttach } from '../utils/dom';
 import { computed, Ref, onMounted, ref, watch } from 'vue';
-import { AttachNode } from '../common';
+import { AttachNode } from 'packages/types/common';
 import { isFunction } from 'lodash-es';
 
 /**

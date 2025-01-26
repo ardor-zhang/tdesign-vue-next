@@ -9,7 +9,7 @@ import { useTNodeJSX } from '../hooks/tnode';
 import useRowspanAndColspan, { getCellKey } from './hooks/useRowspanAndColspan';
 import { RowAndColFixedPosition } from './interface';
 import useClassName from './hooks/useClassName';
-import { Styles } from '../common';
+import { Styles } from 'packages/types/common';
 
 export interface TFootProps {
   rowKey: string;

@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { SizeEnum } from '../common';
+import { SizeEnum } from 'packages/types/common';
 
 import { CalendarValue, CalendarCell, WeekDay, TdCalendarProps } from './type';
 

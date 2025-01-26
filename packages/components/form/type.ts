@@ -6,7 +6,8 @@
 
 import { IsEmailOptions } from 'validator/es/lib/isEmail';
 import { IsURLOptions } from 'validator/es/lib/isURL';
-import { TNode, FormResetEvent, FormSubmitEvent } from '../common';
+import { TNode } from '../common';
+import { FormResetEvent, FormSubmitEvent } from 'packages/types/common';
 
 export interface TdFormProps<FormData extends Data = Data> {
   /**

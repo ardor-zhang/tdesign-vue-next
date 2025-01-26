@@ -14,7 +14,7 @@ import useInput from './useInput';
 import useInputEventHandler from './useInputEventHandler';
 import useInputWidth from './useInputWidth';
 import { isUndefined } from 'lodash-es';
-import { PlainObject } from '../common';
+import { PlainObject } from 'packages/types/common';
 
 function getValidAttrs(obj: PlainObject): PlainObject {
   const newObj: PlainObject = {};

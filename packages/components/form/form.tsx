@@ -16,7 +16,7 @@ import {
 } from './type';
 import props from './props';
 import { FormInjectionKey, FormItemContext, useCLASSNAMES } from './const';
-import { FormResetEvent, FormSubmitEvent } from '../common';
+import { FormResetEvent, FormSubmitEvent } from 'packages/types/common';
 
 import { FormDisabledProvider, FormReadonlyProvider } from './hooks';
 import { usePrefixClass, useTNodeJSX } from '../hooks';
